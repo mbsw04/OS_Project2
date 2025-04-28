@@ -136,7 +136,100 @@ namespace CpuSchedulingWinForms
                 txtProcess.Focus();
             }
         }
+        
+        private void btnMLFQ_Click(object sender, EventArgs e)
+        {
+            if (txtProcess.Text != "")
+            {
+              
+                Algorithms.mlfqAlgorithm(txtProcess.Text);
 
+                int numberOfProcess = Int16.Parse(txtProcess.Text);
+                if (numberOfProcess <= 10)
+                {
+                    this.progressBar1.Increment(4);
+                    this.progressBar1.SetState(1);
+                    this.progressBar2.Increment(13);
+                    this.progressBar2.SetState(1);
+                }
+                else if (numberOfProcess > 10)
+                {
+                    this.progressBar1.Increment(15);
+                    this.progressBar1.SetState(1);
+                    this.progressBar2.Increment(38);
+                    this.progressBar2.SetState(3);
+                }
+
+                listView1.Clear();
+                listView1.View = View.Details;
+
+                listView1.Columns.Add("Process ID", 150, HorizontalAlignment.Center);
+                listView1.Columns.Add("Quantum Time", 100, HorizontalAlignment.Center); // Or "Queue" or other relevant info
+
+                for (int i = 0; i < numberOfProcess; i++)
+                {
+                    var item = new ListViewItem();
+                    item.Text = "Process " + (i + 1);
+                    item.SubItems.Add("N/A"); // Or display queue info if available
+                    listView1.Items.Add(item);
+                }
+
+                listView1.Items.Add("\n");
+                listView1.Items.Add("CPU handles: " + numberOfProcess);
+            }
+            else
+            {
+                MessageBox.Show("Enter number of processes", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtProcess.Focus();
+            }
+        }
+
+        private void btnLottery_Click(object sender, EventArgs e)
+        {
+            if (txtProcess.Text != "")
+            {
+                Algorithms.lotteryAlgorithm(txtProcess.Text);
+
+                int numberOfProcess = Int16.Parse(txtProcess.Text);
+                if (numberOfProcess <= 10)
+                {
+                    this.progressBar1.Increment(4);
+                    this.progressBar1.SetState(1);
+                    this.progressBar2.Increment(13);
+                    this.progressBar2.SetState(1);
+                }
+                else if (numberOfProcess > 10)
+                {
+                    this.progressBar1.Increment(15);
+                    this.progressBar1.SetState(1);
+                    this.progressBar2.Increment(38);
+                    this.progressBar2.SetState(3);
+                }
+
+                listView1.Clear();
+                listView1.View = View.Details;
+
+                listView1.Columns.Add("Process ID", 150, HorizontalAlignment.Center);
+                listView1.Columns.Add("Tickets", 100, HorizontalAlignment.Center); // Or other lottery-specific info
+
+                for (int i = 0; i < numberOfProcess; i++)
+                {
+                    var item = new ListViewItem();
+                    item.Text = "Process " + (i + 1);
+                    item.SubItems.Add("N/A"); // Or display ticket info
+                    listView1.Items.Add(item);
+                }
+
+                listView1.Items.Add("\n");
+                listView1.Items.Add("CPU handles: " + numberOfProcess);
+            }
+            else
+            {
+                MessageBox.Show("Enter number of processes", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtProcess.Focus();
+            }
+        }
+        
         private void btnPriority_Click(object sender, EventArgs e)
         {
             if (txtProcess.Text != "")

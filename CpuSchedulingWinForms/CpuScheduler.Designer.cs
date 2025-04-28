@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -29,7 +30,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CpuScheduler));
+            System.ComponentModel.ComponentResourceManager resources =
+                new System.ComponentModel.ComponentResourceManager(typeof(CpuScheduler));
             this.panel1 = new System.Windows.Forms.Panel();
             this.sidePanel = new System.Windows.Forms.Panel();
             this.btnProductCode = new System.Windows.Forms.Button();
@@ -104,7 +106,8 @@
             this.btnProductCode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProductCode.FlatAppearance.BorderSize = 0;
             this.btnProductCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductCode.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductCode.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductCode.Image = ((System.Drawing.Image)(resources.GetObject("btnProductCode.Image")));
             this.btnProductCode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductCode.Location = new System.Drawing.Point(11, 258);
@@ -119,7 +122,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic,
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 382);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 52);
@@ -132,7 +136,8 @@
             this.btnCpuScheduler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCpuScheduler.FlatAppearance.BorderSize = 0;
             this.btnCpuScheduler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCpuScheduler.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCpuScheduler.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCpuScheduler.Image = ((System.Drawing.Image)(resources.GetObject("btnCpuScheduler.Image")));
             this.btnCpuScheduler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCpuScheduler.Location = new System.Drawing.Point(11, 212);
@@ -147,7 +152,8 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImage =
+                ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.No;
             this.pictureBox1.Location = new System.Drawing.Point(0, -1);
@@ -164,7 +170,8 @@
             this.btnDashBoard.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnDashBoard.FlatAppearance.BorderSize = 0;
             this.btnDashBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashBoard.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashBoard.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashBoard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashBoard.Image")));
             this.btnDashBoard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashBoard.Location = new System.Drawing.Point(11, 161);
@@ -181,7 +188,8 @@
             this.tabSelection.Controls.Add(this.dashBoardTab);
             this.tabSelection.Controls.Add(this.cpuSchedulerTab);
             this.tabSelection.Controls.Add(this.productTab);
-            this.tabSelection.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabSelection.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabSelection.Location = new System.Drawing.Point(171, 1);
             this.tabSelection.Name = "tabSelection";
             this.tabSelection.SelectedIndex = 0;
@@ -201,7 +209,9 @@
             this.dashBoardTab.Controls.Add(this.pictureBox3);
             this.dashBoardTab.Controls.Add(this.pictureBox4);
             this.dashBoardTab.Controls.Add(this.pictureBox2);
-            this.dashBoardTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashBoardTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F,
+                ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))),
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashBoardTab.Location = new System.Drawing.Point(4, 22);
             this.dashBoardTab.Name = "dashBoardTab";
             this.dashBoardTab.Padding = new System.Windows.Forms.Padding(3);
@@ -213,7 +223,8 @@
             // 
             this.listView1.BackColor = System.Drawing.SystemColors.Menu;
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(75, 64);
             this.listView1.Name = "listView1";
@@ -231,7 +242,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(10, 262);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 15);
@@ -248,7 +260,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F,
+                ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))),
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(7, 223);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 15);
@@ -262,7 +276,8 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExit.Location = new System.Drawing.Point(417, 6);
@@ -277,7 +292,8 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImage =
+                ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox3.Location = new System.Drawing.Point(245, 293);
             this.pictureBox3.Name = "pictureBox3";
@@ -288,7 +304,8 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
+            this.pictureBox4.BackgroundImage =
+                ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Name = "pictureBox4";
@@ -300,7 +317,8 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImage =
+                ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Location = new System.Drawing.Point(0, 293);
             this.pictureBox2.Name = "pictureBox2";
@@ -311,7 +329,8 @@
             // cpuSchedulerTab
             // 
             this.cpuSchedulerTab.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.cpuSchedulerTab.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cpuSchedulerTab.BackgroundImage")));
+            this.cpuSchedulerTab.BackgroundImage =
+                ((System.Drawing.Image)(resources.GetObject("cpuSchedulerTab.BackgroundImage")));
             this.cpuSchedulerTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.cpuSchedulerTab.Controls.Add(this.btnRoundRobin);
             this.cpuSchedulerTab.Controls.Add(this.restartApp);
@@ -320,7 +339,9 @@
             this.cpuSchedulerTab.Controls.Add(this.btnFCFS);
             this.cpuSchedulerTab.Controls.Add(this.txtProcess);
             this.cpuSchedulerTab.Controls.Add(this.labelProcess);
-            this.cpuSchedulerTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cpuSchedulerTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F,
+                ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))),
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cpuSchedulerTab.Location = new System.Drawing.Point(4, 22);
             this.cpuSchedulerTab.Name = "cpuSchedulerTab";
             this.cpuSchedulerTab.Padding = new System.Windows.Forms.Padding(3);
@@ -334,7 +355,8 @@
             this.btnRoundRobin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoundRobin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
             this.btnRoundRobin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRoundRobin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoundRobin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRoundRobin.Image = ((System.Drawing.Image)(resources.GetObject("btnRoundRobin.Image")));
             this.btnRoundRobin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRoundRobin.Location = new System.Drawing.Point(247, 278);
@@ -351,7 +373,9 @@
             // 
             this.restartApp.AutoSize = true;
             this.restartApp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.restartApp.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.restartApp.Font = new System.Drawing.Font("Segoe UI", 9F,
+                ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))),
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.restartApp.ForeColor = System.Drawing.Color.Lime;
             this.restartApp.Location = new System.Drawing.Point(362, 379);
             this.restartApp.Name = "restartApp";
@@ -366,7 +390,8 @@
             this.btnPriority.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPriority.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
             this.btnPriority.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPriority.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPriority.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPriority.Image = ((System.Drawing.Image)(resources.GetObject("btnPriority.Image")));
             this.btnPriority.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPriority.Location = new System.Drawing.Point(347, 278);
@@ -385,7 +410,8 @@
             this.btnSJF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSJF.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
             this.btnSJF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSJF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSJF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSJF.Image = ((System.Drawing.Image)(resources.GetObject("btnSJF.Image")));
             this.btnSJF.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSJF.Location = new System.Drawing.Point(115, 278);
@@ -404,7 +430,8 @@
             this.btnFCFS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFCFS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
             this.btnFCFS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFCFS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFCFS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFCFS.Image = ((System.Drawing.Image)(resources.GetObject("btnFCFS.Image")));
             this.btnFCFS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFCFS.Location = new System.Drawing.Point(16, 278);
@@ -419,7 +446,8 @@
             // 
             // txtProcess
             // 
-            this.txtProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F,
+                System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProcess.Location = new System.Drawing.Point(205, 73);
             this.txtProcess.Multiline = true;
             this.txtProcess.Name = "txtProcess";
@@ -470,7 +498,8 @@
             this.btnQrcode.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnQrcode.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
             this.btnQrcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQrcode.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQrcode.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQrcode.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnQrcode.Location = new System.Drawing.Point(357, 359);
             this.btnQrcode.Name = "btnQrcode";
@@ -482,7 +511,8 @@
             // 
             // txtCodeInput
             // 
-            this.txtCodeInput.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodeInput.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodeInput.Location = new System.Drawing.Point(109, 310);
             this.txtCodeInput.Multiline = true;
             this.txtCodeInput.Name = "txtCodeInput";
@@ -507,7 +537,8 @@
             this.btnBarcode.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnBarcode.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
             this.btnBarcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBarcode.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBarcode.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBarcode.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnBarcode.Location = new System.Drawing.Point(189, 359);
             this.btnBarcode.Name = "btnBarcode";
@@ -550,6 +581,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCodeOutput)).EndInit();
             this.ResumeLayout(false);
 
+            this.btnMLFQ = new System.Windows.Forms.Button();
+            this.btnMLFQ.Location = new System.Drawing.Point(219, 334); // Example location
+            this.btnMLFQ.Name = "btnMLFQ";
+            this.btnMLFQ.Size = new System.Drawing.Size(75, 23);
+            this.btnMLFQ.TabIndex = 10; // Example tab index
+            this.btnMLFQ.Text = "MLFQ";
+            this.btnMLFQ.UseVisualStyleBackColor = true;
+            this.btnMLFQ.Click += new System.EventHandler(this.btnMLFQ_Click); //  Important: Add this line
+            this.cpuSchedulerTab.Controls.Add(this.btnMLFQ);
+            
+            this.btnLottery = new System.Windows.Forms.Button();
+            this.btnLottery.Location = new System.Drawing.Point(300, 334); // Example location
+            this.btnLottery.Name = "btnLottery";
+            this.btnLottery.Size = new System.Drawing.Size(75, 23);
+            this.btnLottery.TabIndex = 11; // Example tab index
+            this.btnLottery.Text = "Lottery";
+            this.btnLottery.UseVisualStyleBackColor = true;
+            this.btnLottery.Click += new System.EventHandler(this.btnLottery_Click); // Important: Add this line
+            this.cpuSchedulerTab.Controls.Add(this.btnLottery);
+            
         }
 
         #endregion
@@ -587,5 +638,7 @@
         private System.Windows.Forms.Button btnRoundRobin;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnMLFQ;
+        private System.Windows.Forms.Button btnLottery;
     }
 }

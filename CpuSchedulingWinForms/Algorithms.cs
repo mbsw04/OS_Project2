@@ -150,7 +150,214 @@ namespace CpuSchedulingWinForms
                 MessageBox.Show("Average waiting time for " + np + " processes" + " = " + (awt = twt / np) + " sec(s)", "Average waiting time", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+        
+        public static void mlfqAlgorithm(string userInput)
+        {
+            int np = Convert.ToInt16(userInput);
+            int i, j, k;
+            int q1 = 8, q2 = 16; // Example time quantum for the two queues
+            int[] at = new int[np]; // Arrival times
+            int[] bt = new int[np]; // Burst times
+            int[] rt = new int[np]; // Remaining times
+            int[] wt = new int[np]; // Waiting times
+            int[] tat = new int[np]; // Turnaround times
+            int total_wt = 0, total_tat = 0;
 
+            DialogResult result = MessageBox.Show("Multi-Level Feedback Queue Scheduling", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                // Input processes arrival and burst times.
+                for (i = 0; i < np; i++)
+                {
+                    string arrivalInput = Microsoft.VisualBasic.Interaction.InputBox($"Enter arrival time for P{i + 1}:", $"Arrival Time for P{i + 1}", "", -1, -1);
+                    at[i] = Convert.ToInt32(arrivalInput);
+
+                    string burstInput = Microsoft.VisualBasic.Interaction.InputBox($"Enter burst time for P{i + 1}:", $"Burst Time for P{i + 1}", "", -1, -1);
+                    bt[i] = Convert.ToInt32(burstInput);
+                    rt[i] = bt[i]; // Initialize remaining time
+                }
+
+                // Initialize waiting time array.
+                for (i = 0; i < np; i++)
+                    wt[i] = 0;
+
+                int currentTime = 0;
+                int remainingProcesses = np;
+                int currentProcess = 0;
+                int prevProcess = -1; // Keep track of the previously executed process
+
+                while (remainingProcesses > 0)
+                {
+                    // Find the process that arrives first (if multiple arrive at the same time, pick the one from the highest queue)
+                    currentProcess = -1;
+                    int minArrivalTime = int.MaxValue;
+                    for (j = 0; j < np; j++)
+                    {
+                        if (at[j] <= currentTime && rt[j] > 0)
+                        {
+                            if (currentProcess == -1 || at[j] < minArrivalTime)
+                            {
+                                currentProcess = j;
+                                minArrivalTime = at[j];
+                            }
+                        }
+                    }
+
+                    if (currentProcess == -1)
+                    {
+                        currentTime++;
+                        continue;
+                    }
+
+                    // Execute process based on its queue
+                    if (currentProcess != prevProcess)
+                    {
+                        //context switch
+                        currentTime += 1;
+                    }
+                    prevProcess = currentProcess;
+
+                    if (rt[currentProcess] <= q1)
+                    {
+                        currentTime += rt[currentProcess];
+                        rt[currentProcess] = 0;
+                    }
+                    else
+                    {
+                        currentTime += q1;
+                        rt[currentProcess] -= q1;
+                    }
+
+
+                    if (rt[currentProcess] == 0)
+                    {
+                        remainingProcesses--;
+                        tat[currentProcess] = currentTime - at[currentProcess];
+                        wt[currentProcess] = tat[currentProcess] - bt[currentProcess];
+                        total_wt += wt[currentProcess];
+                        total_tat += tat[currentProcess];
+                    }
+                }
+
+                MessageBox.Show("Multi-Level Feedback Queue Scheduling Completed", "Result", MessageBoxButtons.OK);
+                for (i = 0; i < np; i++)
+                {
+                    MessageBox.Show($"Process P{i + 1}  Wait Time :  {wt[i]} \n Process P{i + 1}  Turnaround Time :  {tat[i]}", "Result", MessageBoxButtons.OK);
+                }
+                MessageBox.Show("Average Wait Time: " + (double)total_wt / np + "\nAverage Turnaround Time: " + (double)total_tat / np, "Result", MessageBoxButtons.OK);
+            }
+            else if (result == DialogResult.No)
+            {
+            }
+        }
+
+        public static void lotteryAlgorithm(string userInput)
+        {
+            int np = Convert.ToInt16(userInput);
+            int i, j;
+            int[] at = new int[np]; // Arrival times
+            int[] bt = new int[np]; // Burst times
+            int[] rt = new int[np]; // Remaining times
+            int[] wt = new int[np]; // Waiting times
+            int[] tat = new int[np]; // Turnaround times
+            int[] tickets = new int[np]; // Number of tickets for each process
+            int totalTickets = 0;
+            Random random = new Random();
+            int total_wt = 0, total_tat = 0;
+
+            DialogResult result = MessageBox.Show("Lottery Scheduling", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                // Input processes arrival and burst times.
+                for (i = 0; i < np; i++)
+                {
+                    string arrivalInput = Microsoft.VisualBasic.Interaction.InputBox($"Enter arrival time for P{i + 1}:", $"Arrival Time for P{i + 1}", "", -1, -1);
+                    at[i] = Convert.ToInt32(arrivalInput);
+
+                    string burstInput = Microsoft.VisualBasic.Interaction.InputBox($"Enter burst time for P{i + 1}:", $"Burst Time for P{i + 1}", "", -1, -1);
+                    bt[i] = Convert.ToInt32(burstInput);
+                    rt[i] = bt[i]; // Initialize remaining time
+
+                    string ticketInput = Microsoft.VisualBasic.Interaction.InputBox($"Enter number of tickets for P{i + 1}:", $"Tickets for P{i + 1}", "", -1, -1);
+                    tickets[i] = Convert.ToInt32(ticketInput);
+                    totalTickets += tickets[i];
+                }
+                for (i = 0; i < np; i++)
+                    wt[i] = 0;
+
+                int currentTime = 0;
+                int remainingProcesses = np;
+                int currentProcess = 0;
+
+                while (remainingProcesses > 0)
+                {
+                    // Find the process that arrives first (if multiple arrive at the same time, pick the one from the highest queue)
+                    currentProcess = -1;
+                    int minArrivalTime = int.MaxValue;
+                    for (j = 0; j < np; j++)
+                    {
+                        if (at[j] <= currentTime && rt[j] > 0)
+                        {
+                            if (currentProcess == -1 || at[j] < minArrivalTime)
+                            {
+                                currentProcess = j;
+                                minArrivalTime = at[j];
+                            }
+                        }
+                    }
+
+                    if (currentProcess == -1)
+                    {
+                        currentTime++;
+                        continue;
+                    }
+                    //select winner
+                    int winningTicket = random.Next(1, totalTickets + 1);
+                    int countTickets = 0;
+                    currentProcess = -1;
+                    for (i = 0; i < np; i++)
+                    {
+                        if (at[i] <= currentTime && rt[i] > 0)
+                        {
+                            countTickets += tickets[i];
+                            if (countTickets >= winningTicket)
+                            {
+                                currentProcess = i;
+                                break;
+                            }
+                        }
+                    }
+                    if (currentProcess == -1)
+                    {
+                        currentTime++;
+                        continue;
+                    }
+                    currentTime++;
+                    rt[currentProcess]--;
+
+                    if (rt[currentProcess] == 0)
+                    {
+                        remainingProcesses--;
+                        tat[currentProcess] = currentTime - at[currentProcess];
+                        wt[currentProcess] = tat[currentProcess] - bt[currentProcess];
+                        total_wt += wt[currentProcess];
+                        total_tat += tat[currentProcess];
+                    }
+                }
+                MessageBox.Show("Lottery Scheduling Completed", "Result", MessageBoxButtons.OK);
+                for (i = 0; i < np; i++)
+                {
+                    MessageBox.Show($"Process P{i + 1}  Wait Time :  {wt[i]} \n Process P{i + 1}  Turnaround Time :  {tat[i]}", "Result", MessageBoxButtons.OK);
+                }
+                MessageBox.Show("Average Wait Time: " + (double)total_wt / np + "\nAverage Turnaround Time: " + (double)total_tat / np, "Result", MessageBoxButtons.OK);
+            }
+            else if (result == DialogResult.No)
+            {
+            }
+        }
+        
         public static void priorityAlgorithm(string userInput)
         {
             int np = Convert.ToInt16(userInput);
