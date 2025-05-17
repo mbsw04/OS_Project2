@@ -1,3 +1,4 @@
+## Added 2 new algorithms for OS project 
 ## CPU-Simulator GUI
 A grahical user interface application with these components: CPU Simulator, QR code and Barcode Generator.
 
